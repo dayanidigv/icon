@@ -63,8 +63,9 @@
         const processedData = data.icons.map(icon => ({
           title: icon.title,
           slug: titleToSlug(icon.title),
+          url: `https://cdn.simpleicons.org/${titleToSlug(icon.title)}?viewbox=auto`
         }));
-
+        console.log(processedData);
         document.getElementById('data-output').textContent = JSON.stringify(processedData, null, 2);
       } catch (error) {
         console.error('Error fetching data:', error);
